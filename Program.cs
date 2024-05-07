@@ -1,3 +1,6 @@
+using Experiments.Services;
+using Microsoft.EntityFrameworkCore;
+
 namespace Experiments
 {
     public class Program
@@ -8,6 +11,10 @@ namespace Experiments
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<SignUpContext>(options => {
+                options.UseSqlServer("Server=DDDEIAN\\SQLEXPRESS;Database=CipherQuest;Trusted_Connection=true;TrustServerCertificate=true;");
+            });
 
             var app = builder.Build();
 
@@ -28,7 +35,7 @@ namespace Experiments
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}");
+                pattern: "{controller=SignUp}/{action=Index}");
 
             app.Run();
         }

@@ -1,4 +1,5 @@
 ﻿using Experiments.Models;
+using Experiments.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Experiments.Controllers
@@ -10,15 +11,32 @@ namespace Experiments.Controllers
             return View();
         }
 
+
+        private readonly SignUpContext _context;
+
+        public SignUpController(SignUpContext context)
+        {
+            _context = context;
+        }
+
         [HttpPost]
         public IActionResult SignUp(SignUpModel signUpModel)
         {
             if (ModelState.IsValid)
             {
-                // Save user to database (e.g., using Entity Framework Core)
-                // Your code to save the user to the database goes here
 
-                // Redirect to a success page or another action
+                var newUser = new SignUpModel
+                {
+                    username = signUpModel.username,
+                    password = signUpModel.password
+                };
+
+                // Add the new user to the Users DbSet
+                _context.Users.Add(newUser);
+
+                // Save changes to the database
+                _context.SaveChanges();
+
                 return RedirectToAction("SignUpSuccess");
             }
 
