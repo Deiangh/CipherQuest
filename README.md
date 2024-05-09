@@ -32,4 +32,4 @@ Contributions are welcome! If you'd like to contribute to CipherQuest, please fo
 This project is licensed under the GPL-3.0 license.
 
 ## Contact
-For questions or feedback, please contact yourname.
+For questions or feedback, please contact me on email: 'dm.maineaz@gmail.com'.
