@@ -1,0 +1,31 @@
+﻿@model Experiments.Models.SignUpModel
+
+@{
+    ViewData["Title"] = "CipherQuest-Login";
+}
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Login" asp-action="Login" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="username" class="control-label">Username</label>
+                <input asp-for="username" class="form-control" />
+                <span asp-validation-for="username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="password" class="control-label">Password</label>
+                <input asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Log in" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+</div>
+
+

@@ -35,7 +35,7 @@ namespace Experiments
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=SignUp}/{action=Index}");
+                pattern: "{controller=Login}/{action=Index}");
 
             app.Run();
         }

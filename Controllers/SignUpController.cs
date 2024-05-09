@@ -25,17 +25,7 @@ namespace Experiments.Controllers
             if (ModelState.IsValid)
             {
 
-                var newUser = new SignUpModel
-                {
-                    username = signUpModel.username,
-                    password = signUpModel.password
-                };
-
-                // Add the new user to the Users DbSet
-                _context.Users.Add(newUser);
-
-                // Save changes to the database
-                _context.SaveChanges();
+                DB_Querries.AddUser(signUpModel,_context);
 
                 return RedirectToAction("SignUpSuccess");
             }
