@@ -15,6 +15,9 @@ namespace Experiments
             builder.Services.AddDbContext<SignUpContext>(options => {
                 options.UseSqlServer("Server=DDDEIAN\\SQLEXPRESS;Database=CipherQuest;Trusted_Connection=true;TrustServerCertificate=true;");
             });
+            builder.Services.AddDbContext<LoginContext>(options => {
+                options.UseSqlServer("Server=DDDEIAN\\SQLEXPRESS;Database=CipherQuest;Trusted_Connection=true;TrustServerCertificate=true;");
+            });
 
             var app = builder.Build();
 
@@ -35,7 +38,7 @@ namespace Experiments
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Login}/{action=Index}");
+                pattern: "{controller=Login}/{action=LoginWithCookies}");
 
             app.Run();
         }

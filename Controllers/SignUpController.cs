@@ -27,16 +27,11 @@ namespace Experiments.Controllers
 
                 DB_Querries.AddUser(signUpModel,_context);
 
-                return RedirectToAction("SignUpSuccess");
+                return View("SignUpSuccess");
             }
 
             // If ModelState is not valid, return the SignUp view with errors
             return View("Index", signUpModel);
-        }
-
-        public IActionResult SignUpSuccess()
-        {
-            return View();
         }
     }
 }

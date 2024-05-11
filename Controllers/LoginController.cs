@@ -7,32 +7,39 @@ namespace Experiments.Controllers
     public class LoginController : Controller
     {
 
-
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         private readonly LoginContext _context;
         public LoginController(LoginContext context)
         {
             _context = context;
         }
 
-        public LoginModel GetUserByUsernameAndPassword(string username, string password)
-        {
-            // Query the users table for a user with the given username and password
-            return _context.Users.FirstOrDefault(u => u.username == username && u.password == password);
+        public IActionResult LoginWithCookies() { 
+            if (Request.Cookies.TryGetValue("Authenticated",out _))
+            { 
+                
+                return View("Cookies"); 
+            }
+            return View("Index");
         }
 
-        public IActionResult Login(LoginModel loginModel) {
+        public IActionResult Login(LoginModel loginModel)
+        {
 
             if (ModelState.IsValid)
             {
+                LoginModel? user = DB_Querries.LoginUser(loginModel.username, loginModel.password, _context);
+                if (user == null)
+                {
 
+                    ModelState.AddModelError(string.Empty, "Invalid username or password. Are you sure you are signed up?");
+                    return View("Index", loginModel);
+
+                }
+
+                Response.Cookies.Append("Authenticated", (user.ID).ToString());
+                return View("LoginSuccess");
             }
-            return View(loginModel);
+            return View("Index",loginModel);
         }
     }
 }

@@ -18,5 +18,11 @@ namespace Experiments.Services
             // Save changes to the database
             _context.SaveChanges();
         }
+
+        public static LoginModel? LoginUser(string username, string password , LoginContext _context)
+        {
+            // Query the users table for a user with the given username and password
+            return _context.Users.FirstOrDefault(u => u.username == username && u.password == password);
+        }
     }
 }

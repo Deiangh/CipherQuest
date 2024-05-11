@@ -4,6 +4,8 @@ namespace Experiments.Models
 {
     public class LoginModel
     {
+   
+        public int ID { get; set; }
 
         [Required(ErrorMessage = "Username is required.")]
         public string username { get; set; }
