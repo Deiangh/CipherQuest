@@ -7,6 +7,7 @@ you can challenge yourself and climb the leaderboard by deciphering messages, in
 + Decipher Messages: Users can decipher messages each day using various cryptographic techniques.
 + Earn Points: Users earn points for deciphering messages correctly.
 + Leaderboard: Users can climb the leaderboard by earning more points than others.
++ Weekly Challenges: Users can participate in weekly challenges to earn bonus points.
 + Signup/Login: Secure signup and login functionality to authenticate users and track their progress.
 + Cookies: Use cookies to maintain user authentication status and enhance user experience.
 
