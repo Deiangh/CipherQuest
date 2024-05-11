@@ -12,7 +12,7 @@ you can challenge yourself and climb the leaderboard by deciphering messages, in
 
 ## Getting Started
 To get started with CipherQuest, follow these steps:
-+ Clone the repository: git clone https://github.com/yourusername/CipherQuest.git
++ Clone the repository: git clone https://github.com/Deiangh/CipherQuest.git
 + Install dependencies: npm install (if using Node.js) or dotnet restore (if using .NET Core)
 + Configure the database connection string in appsettings.json (if using .NET Core)
 + Build and run the project: npm start or dotnet run
