@@ -1,14 +1,17 @@
-﻿@model Experiments.Models.LoginModel
+﻿@model Experiments.Models.SignUpModel
 
 @{
-    ViewData["Title"] = "CipherQuest-Login";
+    ViewData["Title"] = "CipherQuest-SignUp";
 }
 
+<h1>SignUp for CipherQuest</h1>
+
+<h4>Sign up is required to use!</h4>
 <hr />
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-controller="Login" asp-action="Login" method="post">
+        <form asp-controller="SignUp" asp-action="SignUpUser" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="username" class="control-label">Username</label>
@@ -21,7 +24,7 @@
                 <span asp-validation-for="password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Log in" class="btn btn-primary" />
+                <input type="submit" value="Add user" class="btn btn-primary" />
             </div>
         </form>
     </div>

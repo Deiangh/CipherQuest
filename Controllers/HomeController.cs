@@ -13,9 +13,13 @@ namespace Experiments.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult HomePage()
         {
-            return View();
+            if (Request.Cookies.TryGetValue("Authenticated", out string userIDString))
+            {
+                return View("HomePage");
+            }
+            return View("../Login/Login");
         }
 
         public IActionResult Privacy()

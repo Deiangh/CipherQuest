@@ -13,16 +13,17 @@ namespace Experiments.Controllers
             _context = context;
         }
 
-        public IActionResult LoginWithCookies() { 
-            if (Request.Cookies.TryGetValue("Authenticated",out _))
-            { 
-                
-                return View("Cookies"); 
-            }
-            return View("Index");
+        public IActionResult Login() { 
+            return View("Login");
         }
 
-        public IActionResult Login(LoginModel loginModel)
+        public IActionResult Logout()
+        {
+            Response.Cookies.Delete("Authenticated");
+            return View("Login");
+        }
+
+        public IActionResult LoginUser(LoginModel loginModel)
         {
 
             if (ModelState.IsValid)
@@ -32,14 +33,14 @@ namespace Experiments.Controllers
                 {
 
                     ModelState.AddModelError(string.Empty, "Invalid username or password. Are you sure you are signed up?");
-                    return View("Index", loginModel);
+                    return View("Login", loginModel);
 
                 }
 
                 Response.Cookies.Append("Authenticated", (user.ID).ToString());
                 return View("LoginSuccess");
             }
-            return View("Index",loginModel);
+            return View("Login",loginModel);
         }
     }
 }

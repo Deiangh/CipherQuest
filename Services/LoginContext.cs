@@ -7,7 +7,7 @@ namespace Experiments.Services
     {
         public DbSet<LoginModel> Users { get; set; }
 
-        public LoginContext(DbContextOptions options) : base(options)
+        public LoginContext(DbContextOptions<LoginContext> options) : base(options)
         {
 
         }

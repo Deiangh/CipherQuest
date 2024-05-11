@@ -38,7 +38,15 @@ namespace Experiments
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Login}/{action=LoginWithCookies}");
+                pattern: "{controller=Home}/{action=HomePage}");
+
+            app.MapControllerRoute(
+                name: "Login",
+                pattern: "{controller=Login}/{action=Login}");
+
+            app.MapControllerRoute(
+                name: "SignUp",
+                pattern: "{controller=SignUp}/{action=SignUp}");
 
             app.Run();
         }

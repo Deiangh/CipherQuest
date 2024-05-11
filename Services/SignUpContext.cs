@@ -7,9 +7,10 @@ namespace Experiments.Services
     {
         public DbSet<SignUpModel> Users { get; set; }
 
-        public SignUpContext(DbContextOptions options) : base(options) 
+        public SignUpContext(DbContextOptions<SignUpContext> options) : base(options)
         {
-            
+
         }
     }
+
 }

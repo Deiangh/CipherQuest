@@ -6,7 +6,7 @@ namespace Experiments.Controllers
 {
     public class SignUpController : Controller
     {
-        public IActionResult Index()
+        public IActionResult SignUp()
         {
             return View();
         }
@@ -20,7 +20,7 @@ namespace Experiments.Controllers
         }
 
         [HttpPost]
-        public IActionResult SignUp(SignUpModel signUpModel)
+        public IActionResult SignUpUser(SignUpModel signUpModel)
         {
             if (ModelState.IsValid)
             {
@@ -31,7 +31,7 @@ namespace Experiments.Controllers
             }
 
             // If ModelState is not valid, return the SignUp view with errors
-            return View("Index", signUpModel);
+            return View("SignUp", signUpModel);
         }
     }
 }
