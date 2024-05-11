@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Experiments.Migrations
 {
     [DbContext(typeof(SignUpContext))]
-    partial class CipherQuestDBContextModelSnapshot : ModelSnapshot
+    partial class CipherJourneyDBContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

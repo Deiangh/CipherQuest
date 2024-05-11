@@ -1,5 +1,5 @@
-# CipherQuest
-CipherQuest is a web application where users decipher messages each day and earn points based on their efforts. With CipherQuest, 
+# CipherJourney
+CipherJourney is a web application where users decipher messages each day and earn points based on their efforts. With CipherJourney, 
 you can challenge yourself and climb the leaderboard by deciphering messages, including weekly challenges.
 
 ## Features
@@ -11,8 +11,8 @@ you can challenge yourself and climb the leaderboard by deciphering messages, in
 + Cookies: Use cookies to maintain user authentication status and enhance user experience.
 
 ## Getting Started
-To get started with CipherQuest, follow these steps:
-+ Clone the repository: git clone https://github.com/Deiangh/CipherQuest.git
+To get started with CipherJourney, follow these steps:
++ Clone the repository: git clone https://github.com/Deiangh/CipherJourney.git
 + Install dependencies: npm install (if using Node.js) or dotnet restore (if using .NET Core)
 + Configure the database connection string in appsettings.json (if using .NET Core)
 + Build and run the project: npm start or dotnet run
@@ -22,7 +22,7 @@ Once the project is running, users can navigate to the signup/login page to crea
 users can start deciphering messages, earn points, and climb the leaderboard.
 
 ## Contributing
-Contributions are welcome! If you'd like to contribute to CipherQuest, please follow these steps:
+Contributions are welcome! If you'd like to contribute to CipherJourney, please follow these steps:
 + Fork the repository
 + Create a new branch: git checkout +b feature+name
 + Make your changes and commit them: git commit +m 'Add new feature'

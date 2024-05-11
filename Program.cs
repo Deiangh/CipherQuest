@@ -13,10 +13,10 @@ namespace Experiments
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddDbContext<SignUpContext>(options => {
-                options.UseSqlServer("Server=DDDEIAN\\SQLEXPRESS;Database=CipherQuest;Trusted_Connection=true;TrustServerCertificate=true;");
+                options.UseSqlServer("Server=DDDEIAN\\SQLEXPRESS;Database=CipherJourney;Trusted_Connection=true;TrustServerCertificate=true;");
             });
             builder.Services.AddDbContext<LoginContext>(options => {
-                options.UseSqlServer("Server=DDDEIAN\\SQLEXPRESS;Database=CipherQuest;Trusted_Connection=true;TrustServerCertificate=true;");
+                options.UseSqlServer("Server=DDDEIAN\\SQLEXPRESS;Database=CipherJourney;Trusted_Connection=true;TrustServerCertificate=true;");
             });
 
             var app = builder.Build();
@@ -37,8 +37,12 @@ namespace Experiments
             app.UseAuthorization();
 
             app.MapControllerRoute(
-                name: "default",
+                name: "Home",
                 pattern: "{controller=Home}/{action=HomePage}");
+
+            app.MapControllerRoute(
+                name: "About",
+                pattern: "{controller=About}/{action=About}");
 
             app.MapControllerRoute(
                 name: "Login",
@@ -47,6 +51,8 @@ namespace Experiments
             app.MapControllerRoute(
                 name: "SignUp",
                 pattern: "{controller=SignUp}/{action=SignUp}");
+
+
 
             app.Run();
         }
