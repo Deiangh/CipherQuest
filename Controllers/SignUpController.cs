@@ -1,6 +1,7 @@
 ﻿using Experiments.Models;
 using Experiments.Services;
 using Microsoft.AspNetCore.Mvc;
+using NETCore.MailKit.Core;
 
 namespace Experiments.Controllers
 {
@@ -13,10 +14,12 @@ namespace Experiments.Controllers
 
 
         private readonly SignUpContext _context;
+        private readonly Services.IEmailService _emailService;
 
-        public SignUpController(SignUpContext context)
+        public SignUpController(SignUpContext context, Services.IEmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
         }
 
         [HttpPost]
@@ -25,9 +28,8 @@ namespace Experiments.Controllers
             if (ModelState.IsValid)
             {
 
-                DB_Querries.AddUser(signUpModel,_context);
-
-                return View("SignUpSuccess");
+                return View("../Email/EmailVerification");/*
+                DB_Querries.AddUser(signUpModel,_context);*/
             }
 
             // If ModelState is not valid, return the SignUp view with errors

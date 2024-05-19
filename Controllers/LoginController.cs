@@ -13,7 +13,7 @@ namespace Experiments.Controllers
             _context = context;
         }
 
-        public IActionResult Login() { 
+        public IActionResult Login() {
             return View("Login");
         }
 
@@ -28,16 +28,16 @@ namespace Experiments.Controllers
 
             if (ModelState.IsValid)
             {
-                LoginModel? user = DB_Querries.LoginUser(loginModel.username, loginModel.password, _context);
+                User? user = DB_Queries.LoginUser(loginModel.Username, loginModel.Password, _context);
                 if (user == null)
                 {
 
-                    ModelState.AddModelError(string.Empty, "Invalid username or password. Are you sure you are signed up?");
+                    ModelState.AddModelError(string.Empty, "Invalid Username or Password. Are you sure you are signed up?");
                     return View("Login", loginModel);
 
                 }
 
-                Response.Cookies.Append("Authenticated", (user.ID).ToString());
+                Response.Cookies.Append("Authenticated", (user.Id).ToString());
                 return View("LoginSuccess");
             }
             return View("Login",loginModel);

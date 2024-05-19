@@ -2,8 +2,9 @@
 
 namespace Experiments.Models
 {
-    public class SignUpModel
+    public class User
     {
+        public int Id { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -19,7 +20,17 @@ namespace Experiments.Models
 
         [Required]
         [MinLength(8, ErrorMessage = "Password must be at least 8 characters long.")]
+        public byte[] Salt { get; set; }
         public string Password { get; set; }
 
+        public int Score { get; set; }
+        public int DailyAmountDone { get; set; }
+        public int WeeklyAmountDone { get; set; }
+
+        // Email verification properties
+        public bool IsEmailVerified { get; set; }
+
+        public string VerificationToken { get; set; }
     }
 }
+

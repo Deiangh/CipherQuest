@@ -25,14 +25,31 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="About">About</a>
                         </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto me-2">
                         <li class="navbar-nav">
-                            <a class="nav-link " asp-area="" asp-controller="Login" asp-action="LogOut">Logout</a>
+                            <a class="nav-link" asp-area="" asp-controller="SignUp" asp-action="SignUp">SignUp</a>
                         </li>
+                        @if (!ViewContext.HttpContext.Request.Cookies.ContainsKey("Authenticated"))
+                        {
+                            <li class="navbar-nav" id="loginLink">
+                                <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Login">Login</a>
+                            </li>
+                            
+                        }else
+                        {
+                            
+                            <li class="navbar-nav" id="logoutLink">
+                                <a class="nav-link" asp-area="" asp-controller="Login" asp-action="LogOut">Logout</a>
+                            </li>
+                        }
+  
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

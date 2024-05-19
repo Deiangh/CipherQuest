@@ -26,7 +26,7 @@ body {
     margin-left: auto; /* Push navbar items to the right */
 }
 
-    /* Adjust margin between navbar items */
+/* Adjust margin between navbar items */
 .navbar-nav .nav-item {
     margin-left: 10px; /* Add space between navbar items */
 }

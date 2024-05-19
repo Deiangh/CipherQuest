@@ -20,6 +20,7 @@ namespace Experiments
             });
 
             var app = builder.Build();
+            
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -41,12 +42,13 @@ namespace Experiments
                 pattern: "{controller=Home}/{action=HomePage}");
 
             app.MapControllerRoute(
+                name: "Login",
+                pattern: "{controller=Login}/{action=Login}");
+
+            app.MapControllerRoute(
                 name: "About",
                 pattern: "{controller=About}/{action=About}");
 
-            app.MapControllerRoute(
-                name: "Login",
-                pattern: "{controller=Login}/{action=Login}");
 
             app.MapControllerRoute(
                 name: "SignUp",

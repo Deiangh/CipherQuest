@@ -5,7 +5,7 @@ namespace Experiments.Services
 {
     public class SignUpContext : DbContext
     {
-        public DbSet<SignUpModel> Users { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public SignUpContext(DbContextOptions<SignUpContext> options) : base(options)
         {
